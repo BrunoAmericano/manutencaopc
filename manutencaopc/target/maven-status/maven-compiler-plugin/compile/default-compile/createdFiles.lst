@@ -1,2 +1,5 @@
-manutencaopc/controller/ComputadorController.class
+manutencaopc/service/ComputadorService.class
 manutencaopc/ManutencaopcApplication.class
+manutencaopc/repository/ComputadorRepository.class
+manutencaopc/controller/ComputadorController.class
+manutencaopc/model/Computador.class
