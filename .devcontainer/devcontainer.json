@@ -1,18 +1,20 @@
 {
-  "name": "java17-dev",
-  "build": {
-    "dockerfile": "Dockerfile"
+  "name": "Java 17 + Spring Boot",
+  "image": "mcr.microsoft.com/devcontainers/java:17",
+  "features": {
+    "ghcr.io/devcontainers/features/maven:1": {
+      "version": "latest"
+    }
   },
-  "settings": {
-    "terminal.integrated.defaultProfile.linux": "bash"
-  },
-  "extensions": [
-    "vscjava.vscode-java-pack",
-    "pivotal.vscode-spring-boot",
-    "vmware.vscode-spring-boot-dashboard",
-    "esbenp.prettier-vscode"
-  ],
-  "forwardPorts": [8080],
-  "postCreateCommand": "mvn clean install",
-  "remoteUser": "vscode"
+  "postCreateCommand": "echo 'JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64' >> ~/.bashrc && echo 'export PATH=$JAVA_HOME/bin:$PATH' >> ~/.bashrc && source ~/.bashrc",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "vscjava.vscode-java-pack",
+        "pivotal.vscode-spring-boot",
+        "redhat.vscode-xml",
+        "eamodio.gitlens"
+      ]
+    }
+  }
 }
